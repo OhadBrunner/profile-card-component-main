@@ -8,6 +8,24 @@ body {
   background-color: #19A1AE;
 }
 
+h1 {
+  animation: moveInLeft .5s ease-out;
+}
+
+h1:hover {
+  transform: translateY(-10px);
+  cursor: pointer;
+}
+
+h2 {
+  animation: moveInRight .5s ease-out;
+  cursor: pointer;
+}
+
+h2:hover {
+  transform: translateY(10px);
+}
+
 .top-image-box {
   top: 50%;
   position: fixed;
@@ -49,6 +67,15 @@ body {
   top: 22%;
   left: 50%;
   transform: translateX(-50%);
+}
+
+.victor:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.btn::after {
+  z-index: -1;
+  transition: all .4s;
 }
 
 .main-title {
@@ -116,4 +143,28 @@ body {
   color: grey;
   letter-spacing: 2.5px;
   margin-top: 7px;
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
